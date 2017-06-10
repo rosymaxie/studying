@@ -1,0 +1,43 @@
+
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+
+    dependencies {
+        classpath "com.android.tools.build:gradle:0.12.+"
+    }
+}
+
+apply plugin: "com.android.application"
+
+android {
+    compileSdkVersion "android-L"
+    buildToolsVersion "20"
+
+    defaultConfig {
+        applicationId "com.google.android.apps.calculator"
+    }
+
+    sourceSets {
+        main {
+            manifest.srcFile "AndroidManifest.xml"
+            java.srcDirs = ["src"]
+            res.srcDirs = ["res"]
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_7
+        targetCompatibility JavaVersion.VERSION_1_7
+    }
+}
+
+repositories {
+    mavenLocal()
+}
+
+dependencies {
+    compile files("arity-2.1.2.jar")
+    compile "com.android.support:support-v4:+"
+}

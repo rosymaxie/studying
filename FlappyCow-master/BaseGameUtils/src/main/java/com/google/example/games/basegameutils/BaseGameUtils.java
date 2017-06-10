@@ -3,12 +3,9 @@ package com.google.example.games.basegameutils;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.Dialog;
-import android.content.IntentSender;
 import android.util.Log;
 
-import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.GooglePlayServicesUtil;
-import com.google.android.gms.common.api.GoogleApiClient;
 import com.google.android.gms.games.GamesActivityResultCodes;
 
 public class BaseGameUtils {
@@ -20,14 +17,14 @@ public class BaseGameUtils {
     }
 
 
-    public static boolean resolveConnectionFailure(Activity activity,
-                                                   GoogleApiClient client, ConnectionResult result, int requestCode,
+  /*  public static boolean resolveConnectionFailure(Activity activity,
                                                    String fallbackErrorMessage) {
 
         if (result.hasResolution()) {
             try {
                 result.startResolutionForResult(activity, requestCode);
-                return true;
+                return true                      GoogleApiClient client, ConnectionResult result, int requestCode,
+                ;
             } catch (IntentSender.SendIntentException e) {
                 // The intent was canceled before it was sent.  Return to the default
                 // state and attempt to connect to get an updated ConnectionResult.
@@ -55,7 +52,6 @@ public class BaseGameUtils {
         boolean problemFound = false;
         problems.append("The following set up problems were found:\n\n");
 
-        // Did the developer forget to change the package name?
         if (activity.getPackageName().startsWith("com.google.example.games")) {
             problemFound = true;
             problems.append("- Package name cannot be com.google.*. You need to change the "
@@ -78,7 +74,7 @@ public class BaseGameUtils {
         }
 
         return true;
-    }
+    }*/
 
     public static void showActivityResultError(Activity activity, int requestCode, int actResp, int errorDescription) {
         if (activity == null) {
